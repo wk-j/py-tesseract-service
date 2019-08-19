@@ -27,5 +27,6 @@ def postJsonHandler():
 
 if __name__ == "__main__":
     set_prefix()
-    port = "5000" if len(sys.argv) > 0 else sys.argv[1]
+    print(sys.argv)
+    port = "5000" if len(sys.argv) > 1 else sys.argv[1]
     app.run(debug=True, host='0.0.0.0', port=port)
