@@ -20,7 +20,8 @@ def postJsonHandler():
     content = request.get_json()
     response = requests.get(content['url'])
     img = Image.open(BytesIO(response.content))
-    text = pytesseract.image_to_string(img, lang='Thai')
+    text = pytesseract.image_to_string(
+        img, lang='Thai', output_type=pytesseract.Output.STRING)
     textre = text.replace(" ", "")
     return textre
 
