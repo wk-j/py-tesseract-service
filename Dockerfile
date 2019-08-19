@@ -11,4 +11,4 @@ RUN pip3 install -r requirements.txt
 
 COPY src/ /app
 
-CMD python3 app.py
+CMD python3 app.py 9999
