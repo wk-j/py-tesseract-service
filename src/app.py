@@ -5,9 +5,14 @@ from PIL import Image
 import requests
 from io import BytesIO
 import sys
+import os
 
-port = "5000" if len(sys.argv) > 0 else sys.argv[1]
 app = Flask(__name__)
+
+
+def set_prefix():
+    prefix = os.path.dirname(os.path.abspath(__file__)) + "/tessdata"
+    os.environ["TESSDATA_PREFIX"] = prefix
 
 
 @app.route('/ocr', methods=['POST'])
@@ -20,4 +25,7 @@ def postJsonHandler():
     return textre
 
 
-app.run(debug=True, host='0.0.0.0', port=port)
+if __name__ == "__main__":
+    set_prefix()
+    port = "5000" if len(sys.argv) > 0 else sys.argv[1]
+    app.run(debug=True, host='0.0.0.0', port=port)
