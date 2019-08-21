@@ -4,8 +4,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pylint = "*"
-autopep8 = "*"
 
 [packages]
 tesseract = "*"
@@ -14,6 +12,9 @@ requests = "*"
 Flask = "*"
 Flask-RESTful = "*"
 Pillow = "*"
+PyGithub = "*"
+Markdown = "*"
+lxml = "*"
 
 [requires]
 python_version = "3.7"

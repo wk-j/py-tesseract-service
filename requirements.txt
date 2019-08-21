@@ -4,3 +4,6 @@ tesseract
 pytesseract
 pillow
 requests
+PyGithub
+markdown
+lxml
