@@ -1,4 +1,4 @@
-POST http://localhost:5000/ocr
+POST http://localhost:8888/ocr
 Content-Type: application/json
 
 {
