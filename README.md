@@ -1,4 +1,4 @@
-## OCR
+## OCR Service
 
 ```bash
 brew install pipenv
