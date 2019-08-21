@@ -24,7 +24,8 @@ def set_prefix():
 
 def get_links(body):
     body = body.replace("![", "[")
-    doc = etree.fromstring(markdown.markdown(body))
+    m = f"<html>{markdown.markdown(body)}<html>"
+    doc = etree.fromstring(m)
     return [link for link in doc.xpath('//a') if "user-images" in link.get("href")]
 
 
