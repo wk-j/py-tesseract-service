@@ -12,7 +12,7 @@ Content-Type: application/json
     "html_url": "https://github.com/i-bcircle/fake-repository/issues/10",
     "id": 483622381,
     "node_id": "MDU6SXNzdWU0ODM2MjIzODE=",
-    "number": 10,
+    "number": 11,
     "title": "Hello world",
     "user": {
       "login": "wk-j",
