@@ -73,7 +73,7 @@ def github():
     update_issue(f"{org}/{project}", number, new_body)
     print("-- update issue [ok]")
 
-    return new_body
+    return "ok"
 
 
 @app.route('/ocr-url', methods=['POST'])
