@@ -56,6 +56,9 @@ def github():
     number = content["issue"]["number"]
     org = content["organization"]["login"]
 
+    if (action != "opened"):
+        return "skip"
+
     links = get_links(body)
     ocr_text = [(link.text, ocr_url(link.get("href"))) for link in links]
     details = [create_detail(x) for x in ocr_text]
