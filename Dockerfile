@@ -1,7 +1,7 @@
-FROM ubuntu:latest
-RUN apt-get update -y
-RUN apt-get install -y python3-pip python3-dev build-essential
-RUN apt update && apt install -y libsm6 libxext6
+FROM ubuntu:19.10
+RUN apt-get -y update
+RUN apt-get -y install python3-pip python3-dev build-essential
+RUN apt-get -y install libsm6 libxext6
 RUN apt-get -y install tesseract-ocr
 
 WORKDIR /app
