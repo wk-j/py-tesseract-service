@@ -27,7 +27,6 @@ def get_links(body):
 
 
 def update_issue(repo, issue, body):
-    links = get_links(body)
     github = Github(token)
     github_repo = github.get_repo(repo)
     github_repo.get_issue(int(issue)).edit(body=body)
@@ -60,10 +59,19 @@ def github():
         return "skip"
 
     links = get_links(body)
+    print("-- get links [ok]")
+
     ocr_text = [(link.text, ocr_url(link.get("href"))) for link in links]
+    print("-- ocr text [ok]")
+
     details = [create_detail(x) for x in ocr_text]
+    print("-- create detail [ok]")
+
     new_body = body + '\n' + "\n".join(details)
+    print("-- create body [ok]")
+
     update_issue(f"{org}/{project}", number, new_body)
+    print("-- update issue [ok]")
 
     return new_body
 
