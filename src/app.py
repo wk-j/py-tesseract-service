@@ -14,6 +14,8 @@ from functools import reduce
 app = Flask(__name__)
 token = os.environ['GITHUB_TOKEN']
 
+print("-- version 0.1.0")
+
 
 def set_prefix():
     prefix = os.path.dirname(os.path.abspath(__file__)) + "/tessdata"
