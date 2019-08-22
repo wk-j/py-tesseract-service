@@ -70,7 +70,7 @@ def github():
     details = [create_detail(x) for x in ocr_text]
     print("-- create detail [ok]")
 
-    new_body = body + '\n' + "\n".join(details)
+    new_body = body + "\n" + "\n".join(details)
     print("-- create body [ok]")
 
     update_issue(f"{org}/{project}", number, new_body)
@@ -86,8 +86,7 @@ def postJsonHandler():
     img = Image.open(BytesIO(response.content))
     text = pytesseract.image_to_string(
         img, lang='Thai', output_type=pytesseract.Output.STRING, config='-c preserve_interword_spaces=1,tessedit_create_hocr=1')
-    textre = text.replace(" ", "")
-    return textre
+    return text
 
 
 if __name__ == "__main__":
